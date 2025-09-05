@@ -8,7 +8,7 @@ import 'package:github_users_search/Models/user_details.dart';
 
 class UserSearchRepository {
   final Dio _dio;
-  final Map<String, UserDetails> _cache = {}; // 🟢 كاش للمستخدمين
+  final Map<String, UserDetails> _cache = {}; 
 
   UserSearchRepository(this._dio);
 
@@ -33,7 +33,7 @@ class UserSearchRepository {
             return _cache[login]!;
           } else {
             final details = await getUserDetails(login);
-            _cache[login] = details; // خزّنه في الكاش
+            _cache[login] = details; 
 
             return details;
           }
